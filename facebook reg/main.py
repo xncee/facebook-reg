@@ -26,6 +26,7 @@ class Xnce():
         print(f"\n{DESIGN.blueplus} Email: ", end="")
         email = input()
         self.facebook_register(email)
+        self.inex()
     def inex(self):
         print(f"\n{DESIGN.redminus} Enter To Exit: ", end="")
         input()
@@ -92,12 +93,9 @@ class Xnce():
         if '"registration_succeeded":true' in req.text:
             print(f"\n{DESIGN.blueplus} Done {DESIGN.BLUE}{email}")
             print(f"\n{DESIGN.blueplus} Wait 5-10 Minutes")
-            self.inex()
         elif '"email_claiming_skip_to_recovery":true' in req.text:
             print(f"\n{DESIGN.redminus} Email Is Already Registered")
-            self.inex()
         else:
             print(f"\n{DESIGN.redminus} {req.text}, {req.status_code}")
-            self.inex()
 print(DESIGN.xrblue)
 Xnce()
