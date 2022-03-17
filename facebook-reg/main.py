@@ -1,4 +1,4 @@
-import os, string, uuid
+import os
 try:
     import requests
 except ImportError:
